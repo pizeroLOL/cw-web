@@ -22,7 +22,7 @@ type Plugins = {
 
 async function fetchPlugins() {
   const srcUrl =
-    "https://bgithub.xyz/Class-Widgets/plugin-plaza/raw/refs/heads/main/Plugins/plugin_list.json";
+    "https://raw.githubusercontent.com/Class-Widgets/plugin-plaza/refs/heads/main/Plugins/plugin_list.json";
   const src = await fetch(srcUrl);
   const rawOutput = await src.json();
   return rawOutput as Plugins;

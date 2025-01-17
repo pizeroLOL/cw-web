@@ -9,7 +9,7 @@ export interface AsideProps {
 
 export default component$<AsideProps>((input) => (
   <aside
-    class="fixed z-50 flex h-dvh w-80 flex-col gap-1 bg-white px-2 transition-[left] dark:bg-black "
+    class="fixed z-50 flex h-dvh w-80 flex-col gap-1 bg-gray-100 px-2 transition-[left] dark:bg-gray-900 "
     style={{ left: input.isShowAside ? "0" : "-80rem" }}
   >
     <section class="mb-8 flex h-12 items-center gap-8 px-2">

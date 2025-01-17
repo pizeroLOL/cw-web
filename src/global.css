@@ -50,16 +50,17 @@
       after:h-1
       after:w-4
       after:rounded-full 
-    after:bg-white
+      after:bg-white
       after:align-middle 
       after:transition-all
       after:duration-100
       after:ease-linear
       after:content-['']
       hover:after:w-full
-    hover:after:bg-cyan-200
-    after:aria-selected:bg-cyan-400
-    after:dark:bg-black
-    after:aria-selected:dark:bg-cyan-600;
+      hover:after:bg-cyan-200
+      after:aria-selected:bg-cyan-400
+      after:dark:bg-black
+      dark:hover:after:bg-cyan-800
+      after:aria-selected:dark:bg-cyan-600;
   }
 }

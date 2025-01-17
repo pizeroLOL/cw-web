@@ -43,7 +43,7 @@ export default component$(() => {
     },
     {
       name: "下载",
-      href: "/download/",
+      href: "/downloads/",
       type: "AsideA",
     },
     {
@@ -61,7 +61,7 @@ export default component$(() => {
       >
         {asideDom}
       </Aside>
-      <header class="sticky top-0 bg-white dark:bg-black h-12">
+      <header class="sticky top-0 h-12 bg-white dark:bg-black">
         <div class="flex h-12 items-center gap-8 px-4">
           <button onClick$={() => (showAside.value = !showAside.value)}>
             <PanelLeftExpand width={20} height={20} />
@@ -72,7 +72,7 @@ export default component$(() => {
         </div>
       </header>
       <Slot />
-      <footer class="">a</footer>
+      <footer class=""> </footer>
     </>
   );
 });

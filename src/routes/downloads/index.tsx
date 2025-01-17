@@ -25,10 +25,10 @@ async function genRelease(isRelease: boolean) {
     .map((it, index) => (
       <section
         key={index}
-        class="flex flex-col gap-4 rounded-lg border-2 border-gray-500 p-4 "
+        class="flex flex-col gap-4 rounded-lg border-2 border-gray-500 bg-gray-50 p-4 dark:bg-gray-950"
       >
-        <h2 class="text-3xl">{it.name}</h2>
-        <div class="flex items-center gap-4 align-middle text-gray-500">
+        <h1 class="text-3xl">{it.name}</h1>
+        <div class="flex flex-wrap items-center gap-4 align-middle text-gray-500">
           <a
             href={it.author.html_url}
             class="flex items-center gap-2 align-middle hover:text-cyan-500"
@@ -46,7 +46,7 @@ async function genRelease(isRelease: boolean) {
             {new Date(it.created_at).toString()}
           </time>
         </div>
-        <pre class="border-y-2 border-gray-500 py-2">
+        <pre class="overflow-scroll border-y-2 border-gray-500 py-2">
           <code>{it.body}</code>
         </pre>
         <div class="flex gap-4">
@@ -60,10 +60,71 @@ async function genRelease(isRelease: boolean) {
             </a>
           ))}
         </div>
-        <div class="flex gap-4 hover:*:text-cyan-500">
+        <div class="flex flex-wrap gap-4 hover:*:text-cyan-500">
           <a href={it.html_url}>Github</a>
           <a href={it.discussion_url}>讨论</a>
         </div>
+      </section>
+    ));
+}
+
+async function genNightly() {
+  const srcUrl =
+    "https://api.github.com/repos/class-widgets/class-widgets/actions/runs?branch=main&per_page=100";
+  const src = await fetch(srcUrl);
+  const rawInput = await src.json();
+  const input = rawInput as {
+    workflow_runs: {
+      id: number;
+      name: string;
+      display_title: string;
+      status: string;
+      actor: { login: string; html_url: string; avatar_url: string };
+      head_commit: { id: string };
+    }[];
+  };
+  const links = (runId: number) =>
+    [
+      "ubuntu-20.04-x64",
+      "debian-10-x64",
+      "macos-13-bundle",
+      "macos-13-x64",
+      "windows-latest-x64",
+      "windows-latest-x86",
+    ].map((it, index) => (
+      <a
+        key={index}
+        href={`https://nightly.link/Class-Widgets/Class-Widgets/actions/runs/${runId}/${it}.zip`}
+        class="block rounded-md bg-gray-200 p-2 hover:bg-cyan-200 hover:text-cyan-800 dark:bg-gray-800 hover:dark:bg-cyan-800 hover:dark:text-cyan-200"
+      >
+        {it}
+      </a>
+    ));
+  return input.workflow_runs
+    .filter((it) => it.name == "构建" && it.status == "completed")
+    .map((it, index) => (
+      <section
+        key={index}
+        class="flex flex-col gap-4 rounded-lg border-2 border-gray-500 bg-gray-50 p-4 dark:bg-gray-950"
+      >
+        <h1 class="text-3xl">{it.display_title}</h1>
+        <div class="flex flex-wrap items-center gap-4 align-middle text-gray-500">
+          <a
+            href={it.actor.html_url}
+            class="flex items-center gap-2 align-middle hover:text-cyan-500"
+          >
+            <img
+              src={it.actor.avatar_url}
+              alt={`${it.actor.login} 的头像`}
+              width={32}
+              height={32}
+              class="rounded-full"
+            />
+            <span>{it.actor.login}</span>
+          </a>
+          <span>{it.head_commit.id}</span>
+        </div>
+        <div class="flex flex-wrap gap-4">{links(it.id)}</div>
       </section>
     ));
 }
@@ -78,9 +139,9 @@ export default component$(() => {
     track(() => selected.value);
     const controller = new AbortController();
     cleanup(() => controller.abort());
-    // if (selected.value == 2) {
-    //   return fetch("https://api.github.com/repos/class-widgets/class-widgets/actions/runs?branch=main&per_page=100");
-    // }
+    if (selected.value == 2) {
+      return genNightly();
+    }
     return genRelease(selected.value == 0);
   });
 
@@ -101,13 +162,13 @@ export default component$(() => {
         >
           测试版
         </button>
-        {/* <button
+        <button
           class="select-item px-2 pb-1 pt-2"
           aria-selected={selected.value == 2}
           onClick$={() => (selected.value = 2)}
         >
           夜间版
-        </button> */}
+        </button>
       </header>
       <Resource
         value={data}

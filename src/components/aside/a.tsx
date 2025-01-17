@@ -26,7 +26,10 @@ const AsideA = component$<AsideAProps>((info) => {
   //     (locationPathname.charAt(endSlashPosition) === "/" ||
   //       locationPathname.charAt(startSlashPosition) === "/"));
   return (
-    <Link href={info.href} class="block rounded-lg px-2 hover:bg-sky-200">
+    <Link
+      href={info.href}
+      class="block rounded-lg p-2 hover:bg-cyan-200 dark:hover:bg-cyan-800"
+    >
       {info.name}
     </Link>
   );

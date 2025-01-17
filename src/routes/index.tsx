@@ -16,7 +16,7 @@ export default component$(() => {
           >
             下载
             <svg
-              class="block stroke-white dark:stroke-black"
+              class="block stroke-black dark:stroke-white"
               width="16"
               height="16"
               viewBox="0 0 20 20"

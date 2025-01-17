@@ -1,7 +1,7 @@
 import { component$ } from "@builder.io/qwik";
 import type { AsideAProps } from "./a";
 import AsideA from "./a";
-import menuSrc from "@fluentui/svg-icons/icons/chevron_down_16_filled.svg"
+import menuSrc from "@fluentui/svg-icons/icons/chevron_down_16_filled.svg";
 
 export interface AsideDetailProps {
   name: string;
@@ -11,8 +11,12 @@ export interface AsideDetailProps {
 
 const AsideDetail = component$<AsideDetailProps>((input) => (
   <details>
-    <summary class="list-none flex gap-4 rounded-lg px-2 hover:bg-sky-200"> <img src={menuSrc} width={16} height={16} /> <span>{input.name}</span></summary>
-    <div class="ml-8">{input.items.map((input, key) => asideRender(input, key))}</div>
+    <summary class="flex list-none gap-2 rounded-lg px-2 hover:bg-sky-200 hover:dark:bg-sky-800">
+      <img src={menuSrc} width={16} height={16} /> <span>{input.name}</span>
+    </summary>
+    <div class="ml-6">
+      {input.items.map((input, key) => asideRender(input, key))}
+    </div>
   </details>
 ));
 

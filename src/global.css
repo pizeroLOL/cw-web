@@ -7,5 +7,59 @@
 @tailwind utilities;
 
 :root {
-    color-scheme: dark light;
+  color-scheme: dark light;
+}
+
+@layer base {
+  body {
+    @apply bg-white text-black;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body {
+      @apply bg-black text-white;
+    }
+  }
+}
+
+@layer components {
+  .loader {
+    @apply h-8 
+      w-8 
+      rounded-full 
+      border-4 
+      border-gray-300 
+      before:relative
+      before:-left-1 
+      before:-top-1 
+      before:block 
+      before:h-8 
+      before:w-8 
+      before:animate-spin 
+      before:rounded-full 
+      before:border-4 
+      before:border-gray-300 
+      before:border-r-gray-500 
+      before:content-[''] 
+      dark:border-gray-700;
+  }
+
+  .select-item {
+    @apply after:mx-auto
+      after:block
+      after:h-1
+      after:w-4
+      after:rounded-full 
+    after:bg-white
+      after:align-middle 
+      after:transition-all
+      after:duration-100
+      after:ease-linear
+      after:content-['']
+      hover:after:w-full
+    hover:after:bg-cyan-200
+    after:aria-selected:bg-cyan-400
+    after:dark:bg-black
+    after:aria-selected:dark:bg-cyan-600;
+  }
 }

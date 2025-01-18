@@ -1,4 +1,4 @@
-import { component$, Slot } from "@builder.io/qwik";
+import { $, component$, Slot, useSignal } from "@builder.io/qwik";
 import type { RequestHandler } from "@builder.io/qwik-city";
 import { asideRender, type AsideDetailProps } from "~/components/aside/detail";
 import type { AsideAProps } from "~/components/aside/a";
@@ -52,26 +52,43 @@ export default component$(() => {
     },
   ];
   const asideDom = asideLinkData.map((i, k) => asideRender(i, k));
+  const showAside = useSignal(false);
+  const switchAside = $(() => (showAside.value = !showAside.value));
   return (
     <>
-      <input type="checkbox" class="peer/aside hidden" id="showAside" />
-      <aside class="fixed -left-80 z-50 flex h-dvh w-80 flex-col gap-1 border-r-2 border-gray-400 dark:border-gray-600 bg-gray-100 px-2 transition-[left] peer-checked/aside:left-0 md:left-0 dark:bg-gray-900 ">
+      <input
+        type="checkbox"
+        class="peer/aside hidden"
+        id="showAside"
+        onChange$={(it) =>
+          (showAside.value = (it.target as HTMLInputElement).value == "on")
+        }
+        checked={showAside.value}
+      />
+      <aside class="fixed -left-80 z-50 flex h-dvh w-80 flex-col gap-1 border-r-2 border-gray-400 bg-gray-100 px-2 transition-[left] ease-in-out peer-checked/aside:left-0 dark:border-gray-600 dark:bg-gray-900">
         <section class="mb-8 flex h-12 items-center gap-8 px-2">
-          <label for="showAside md:hidden">
-            <PanelRightExpand />
-          </label>
+          <button
+            aria-selected={showAside.value}
+            onClick$={switchAside}
+            class=""
+          >
+            {showAside.value ? <PanelRightExpand /> : <PanelLeftExpand />}
+          </button>
           <a href="/" class="flex gap-2">
             <ALogo />
           </a>
         </section>
         <section class="flex flex-col gap-2">{asideDom}</section>
       </aside>
-      <div class="ml-auto md:ml-80">
-        <header class="sticky top-0 h-12 bg-white md:hidden dark:bg-black">
+      <div class="ml-0 transition-[margin] ease-in-out md:peer-checked/aside:ml-80">
+        <header
+          class="sticky top-0 h-12 min-h-0 bg-white transition-[height] ease-out md:aria-disabled:h-0 md:block overflow-hidden dark:bg-black"
+          aria-disabled={showAside.value}
+        >
           <div class="flex h-12 items-center gap-8 px-4">
-            <label for="showAside">
+            <button onClick$={switchAside}>
               <PanelLeftExpand width={20} height={20} />
-            </label>
+            </button>
             <a href="/" class="flex gap-2">
               <ALogo />
             </a>

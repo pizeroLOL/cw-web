@@ -10,6 +10,7 @@ async function genRelease(isRelease: boolean) {
     "https://api.github.com/repos/class-widgets/class-widgets/releases";
   const src = await fetch(srcUrl);
   const input = await src.json();
+  console.log(input);
   const strunctInput = input as {
     html_url: string;
     author: { login: string; html_url: string; avatar_url: string };
@@ -73,6 +74,7 @@ async function genNightly() {
     "https://api.github.com/repos/class-widgets/class-widgets/actions/runs?branch=main&per_page=100";
   const src = await fetch(srcUrl);
   const rawInput = await src.json();
+  console.log(rawInput);
   const input = rawInput as {
     workflow_runs: {
       id: number;

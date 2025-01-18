@@ -53,7 +53,7 @@ export default component$(() => {
       <a
         href={v.url}
         key={k}
-        class="flex flex-col gap-2 break-words rounded-xl border-2 border-gray-200 bg-gray-100 p-4 px-4 hover:bg-cyan-900 dark:border-gray-800 dark:bg-gray-900"
+        class="flex flex-col gap-2 break-words rounded-xl border-4 border-gray-200 bg-gray-100 p-4 px-4 hover:border-cyan-100 dark:border-gray-800 dark:bg-gray-900 dark:hover:border-cyan-900"
       >
         <h2 class="text-xl">{v.name}</h2>
         <div class="flex gap-4 text-gray-500">
@@ -67,7 +67,7 @@ export default component$(() => {
   );
   return (
     <main>
-      <section class="flex h-64 flex-col items-center justify-center gap-4 bg-gray-900 p-4">
+      <section class="flex h-64 flex-col items-center justify-center gap-4 bg-gray-100 p-4 dark:bg-gray-900">
         <h1 class="text-3xl">插件广场</h1>
         {/* <div>
           <input

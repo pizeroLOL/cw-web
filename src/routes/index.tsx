@@ -4,15 +4,25 @@ import { Link, type DocumentHead } from "@builder.io/qwik-city";
 export default component$(() => {
   return (
     <main>
-      <section class="mx-2 flex min-h-[60dvh] flex-col gap-4 rounded-xl px-4 py-[20dvh] shadow-sm shadow-black">
-        <h1 class="text-4xl">Class Widgets</h1>
-        <p class="text">
-          一个现代、美观、跨平台、可自定义的，用于展示上课状态的浮窗软件。
-        </p>
-        <div class="flex items-center gap-4">
+      <section class="flex min-h-[60dvh] flex-col gap-4 rounded-xl px-8">
+        <div class="mt-80">
+          <p class="pb-2 text-xl font-semibold text-gray-300">使用</p>
+          <h1 class="text-6xl lg:text-8xl">Class Widgets</h1>
+          <div class="flex gap-2 pt-4 text-2xl">
+            提醒老师同学
+            <div class="h-8 overflow-hidden font-light">
+              <div class="animate-index-cw-tip *:h-8">
+                <div>课堂剩余时间</div>
+                <div>复习剩余时间</div>
+                <div>下课剩余时间</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mt-2 flex items-center gap-4">
           <Link
             href="/downloads"
-            class=" flex w-fit items-center justify-center gap-2 rounded bg-cyan-600 px-3 py-1 text-white hover:bg-cyan-700 active:bg-cyan-800"
+            class="flex w-fit items-center justify-center gap-2 rounded bg-cyan-600 px-3 py-1 text-white hover:bg-cyan-700 active:bg-cyan-800"
           >
             下载
             <svg
@@ -27,7 +37,7 @@ export default component$(() => {
           </Link>
           <Link href="/docs"></Link>
           <a
-            class="flex items-center rounded-full px-1 py-1 hover:bg-gray-200 active:bg-gray-400"
+            class="flex items-center rounded-full px-1 py-1 hover:bg-gray-200 active:bg-gray-400 hover:dark:bg-gray-800 dark:active:bg-gray-600"
             href="https://github.com/class-widgets/class-widgets"
           >
             <svg

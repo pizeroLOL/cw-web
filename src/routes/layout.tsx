@@ -82,7 +82,7 @@ export default component$(() => {
       </aside>
       <div class="ml-0 transition-[margin] ease-in-out md:peer-checked/aside:ml-80">
         <header
-          class="sticky top-0 h-12 min-h-0 bg-white transition-[height] ease-out md:aria-disabled:h-0 md:block overflow-hidden dark:bg-black"
+          class="sticky top-0 h-12 min-h-0 overflow-hidden bg-white transition-[height] ease-out md:block md:aria-disabled:h-0 dark:bg-black"
           aria-disabled={showAside.value}
         >
           <div class="flex h-12 items-center gap-8 px-4">

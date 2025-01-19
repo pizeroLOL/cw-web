@@ -1,11 +1,13 @@
 import {
   component$,
   Resource,
+  useContext,
   useResource$,
   useSignal,
 } from "@builder.io/qwik";
 import DOMPurify from "dompurify";
 import { marked } from "marked";
+import { ShowedAsideContext } from "~/context";
 
 async function genRelease(isRelease: boolean) {
   const srcUrl =
@@ -149,10 +151,13 @@ export default component$(() => {
     }
     return genRelease(selected.value == 0);
   });
-
+  const showedAside = useContext(ShowedAsideContext);
   return (
     <>
-      <header class="sticky top-12 flex w-full border-b-2 bg-white px-2 dark:bg-black">
+      <header
+        class="sticky top-12 flex w-full border-b-2 bg-white px-2 transition-[top] ease-in-out md:top-0 md:aria-expanded:top-12 dark:bg-black"
+        aria-expanded={!showedAside.value}
+      >
         <button
           class="select-item px-2 pb-1 pt-2"
           aria-selected={selected.value == 0}

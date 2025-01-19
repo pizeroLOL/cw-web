@@ -1,10 +1,17 @@
-import { $, component$, Slot, useSignal } from "@builder.io/qwik";
+import {
+  $,
+  component$,
+  Slot,
+  useContextProvider,
+  useSignal,
+} from "@builder.io/qwik";
 import type { RequestHandler } from "@builder.io/qwik-city";
 import { asideRender, type AsideDetailProps } from "~/components/aside/detail";
 import type { AsideAProps } from "~/components/aside/a";
 import ALogo from "~/components/aLogo";
 import PanelLeftExpand from "~/components/fluentIcon/PanelLeftExpand";
 import PanelRightExpand from "~/components/fluentIcon/PanelRightExpand";
+import { ShowedAsideContext } from "~/context";
 
 export const onGet: RequestHandler = async ({ cacheControl }) => {
   // Control caching for this request for best performance and to reduce hosting costs:
@@ -54,6 +61,7 @@ export default component$(() => {
   const asideDom = asideLinkData.map((i, k) => asideRender(i, k));
   const showAside = useSignal(false);
   const switchAside = $(() => (showAside.value = !showAside.value));
+  useContextProvider(ShowedAsideContext, showAside);
   return (
     <>
       <input

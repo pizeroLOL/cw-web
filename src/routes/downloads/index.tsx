@@ -4,6 +4,8 @@ import {
   useResource$,
   useSignal,
 } from "@builder.io/qwik";
+import DOMPurify from "dompurify";
+import { marked } from "marked";
 
 async function genRelease(isRelease: boolean) {
   const srcUrl =
@@ -20,6 +22,8 @@ async function genRelease(isRelease: boolean) {
     body: string;
     discussion_url: string;
   }[];
+  const formatDom = (i: string) =>
+    DOMPurify.sanitize(marked.parse(i) as string);
   return strunctInput
     .filter((it) => it.prerelease == !isRelease)
     .map((it, index) => (
@@ -46,9 +50,10 @@ async function genRelease(isRelease: boolean) {
             {new Date(it.created_at).toString()}
           </time>
         </div>
-        <pre class="overflow-scroll border-y-2 border-gray-500 py-2">
-          <code>{it.body}</code>
-        </pre>
+        <div
+          class="markdown word-break overflow-auto border-y-2 border-gray-500 py-2"
+          dangerouslySetInnerHTML={formatDom(it.body)}
+        ></div>
         <div class="flex gap-4">
           {it.assets.map((assets, index) => (
             <a

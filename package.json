@@ -47,6 +47,8 @@
     "vite-tsconfig-paths": "^4.2.1"
   },
   "dependencies": {
-    "@fluentui/svg-icons": "^1.1.271"
+    "@fluentui/svg-icons": "^1.1.271",
+    "dompurify": "^3.2.3",
+    "marked": "^15.0.6"
   }
 }

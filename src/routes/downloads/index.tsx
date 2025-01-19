@@ -149,7 +149,7 @@ export default component$(() => {
     <>
       <header class="sticky top-12 flex w-full border-b-2 bg-white px-2 dark:bg-black">
         <button
-          class="select-item px-2 pb-1 pt-2 "
+          class="select-item px-2 pb-1 pt-2"
           aria-selected={selected.value == 0}
           onClick$={() => (selected.value = 0)}
         >
@@ -175,7 +175,7 @@ export default component$(() => {
         onPending={() => (
           <main class="mx-auto flex min-h-80 w-fit items-center gap-4 py-4">
             <div class="loader"></div>
-            <div class=" text-gray-500">加载中</div>
+            <div class="text-gray-500">加载中</div>
           </main>
         )}
         onResolved={(i) => <main class="m-4 flex flex-col gap-4">{i}</main>}

@@ -19,27 +19,27 @@ export const onGet: RequestHandler = async ({ cacheControl }) => {
 
 export default component$(() => {
   const asideLinkData: (AsideDetailProps | AsideAProps)[] = [
-    {
-      name: "使用文档",
-      items: [
-        {
-          name: "item",
-          href: "/start/",
-          type: "AsideA",
-        },
-      ],
-      type: "AsideDetail",
-    },
-    {
-      name: "开发文档",
-      items: [],
-      type: "AsideDetail",
-    },
-    {
-      name: "社区",
-      items: [],
-      type: "AsideDetail",
-    },
+    // {
+    //   name: "使用文档",
+    //   items: [
+    //     {
+    //       name: "item",
+    //       href: "/start/",
+    //       type: "AsideA",
+    //     },
+    //   ],
+    //   type: "AsideDetail",
+    // },
+    // {
+    //   name: "开发文档",
+    //   items: [],
+    //   type: "AsideDetail",
+    // },
+    // {
+    //   name: "社区",
+    //   items: [],
+    //   type: "AsideDetail",
+    // },
     {
       name: "下载",
       href: "/downloads/",

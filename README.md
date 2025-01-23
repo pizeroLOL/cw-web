@@ -2,6 +2,16 @@
 
 闲得没事搓个 qwik 网页玩玩。
 
+## Todo
+
+- [ ] fluent design ui
+- [ ] 首页
+- [ ] 完成使用 qwik 的链接
+- [ ] 想办法在 qwik 中在一个文件夹下展示markdown 文件
+- [ ] 升级 eslint
+- [ ] 升级 tailwind
+- [ ] 准备升级 qwik
+
 ## 添加集成
 
 ```shell

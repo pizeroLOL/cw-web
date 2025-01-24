@@ -12,6 +12,14 @@
 - [ ] 升级 tailwind
 - [ ] 准备升级 qwik
 
+## 梗图贡献流程
+
+1. 确认你有安装 `git lfs`
+2. fork 本仓库
+3. 在 `pulic/meme-img/` 文件夹添加你的图片
+4. 在 `src/routes/meme/data.json` 中添加数据，时间填时间，类型填 img，data 填图片地址（`public/meme-img/a.jpg` 填 `/meme-img/a.jpg`），标题填标题
+5. 打开 pull request
+
 ## 添加集成
 
 ```shell

@@ -56,6 +56,10 @@ export default component$(() => {
       name: "插件中心",
       href: "/pp/",
       type: "AsideA",
+    },{
+      name: "meme",
+      href: "/meme/",
+      type: "AsideA",
     },
   ];
   const asideDom = asideLinkData.map((i, k) => asideRender(i, k));

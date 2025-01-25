@@ -5,7 +5,7 @@ import {
   useContextProvider,
   useSignal,
 } from "@builder.io/qwik";
-import type { RequestHandler } from "@builder.io/qwik-city";
+import { Link, type RequestHandler } from "@builder.io/qwik-city";
 import { asideRender, type AsideDetailProps } from "~/components/aside/detail";
 import type { AsideAProps } from "~/components/aside/a";
 import ALogo from "~/components/aLogo";
@@ -56,7 +56,8 @@ export default component$(() => {
       name: "插件中心",
       href: "/pp/",
       type: "AsideA",
-    },{
+    },
+    {
       name: "meme",
       href: "/meme/",
       type: "AsideA",
@@ -86,9 +87,9 @@ export default component$(() => {
           >
             {showAside.value ? <PanelRightExpand /> : <PanelLeftExpand />}
           </button>
-          <a href="/" class="flex gap-2">
+          <Link prefetch href="/" class="flex gap-2">
             <ALogo />
-          </a>
+          </Link>
         </section>
         <section class="flex flex-col gap-2">{asideDom}</section>
       </aside>
@@ -101,9 +102,9 @@ export default component$(() => {
             <button onClick$={switchAside}>
               <PanelLeftExpand width={20} height={20} />
             </button>
-            <a href="/" class="flex gap-2">
+            <Link prefetch href="/" class="flex gap-2">
               <ALogo />
-            </a>
+            </Link>
           </div>
         </header>
         <Slot />

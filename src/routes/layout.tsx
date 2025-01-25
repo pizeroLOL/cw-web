@@ -78,6 +78,11 @@ export default component$(() => {
         }
         checked={showAside.value}
       />
+      <div
+        class="static left-0 top-0 z-40 hidden h-dvh w-dvw aria-expanded:fixed aria-expanded:block md:aria-expanded:hidden"
+        aria-expanded={showAside.value}
+        onClick$={() => (showAside.value = !showAside.value)}
+      ></div>
       <aside class="fixed -left-80 z-50 flex h-dvh w-80 flex-col gap-1 border-r-2 border-gray-400 bg-gray-100 px-2 transition-[left] ease-in-out peer-checked/aside:left-0 dark:border-gray-600 dark:bg-gray-900">
         <section class="mb-8 flex h-12 items-center gap-8 px-2">
           <button

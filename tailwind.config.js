@@ -34,9 +34,11 @@ const fluentLineHight = {
 };
 
 const fluentFontFamily = {
-  "f-base": "'Segoe UI', 'Segoe UI Web (West European)', -apple-system, BlinkMacSystemFont, Roboto, 'Helvetica Neue', sans-serif",
+  "f-base":
+    "'Segoe UI', 'Segoe UI Web (West European)', -apple-system, BlinkMacSystemFont, Roboto, 'Helvetica Neue', sans-serif",
   "f-monospace": "Consolas, 'Courier New', Courier, monospace",
-  "f-numeric": "Bahnschrift, 'Segoe UI', 'Segoe UI Web (West European)', -apple-system, BlinkMacSystemFont, Roboto, 'Helvetica Neue', sans-serif",
+  "f-numeric":
+    "Bahnschrift, 'Segoe UI', 'Segoe UI Web (West European)', -apple-system, BlinkMacSystemFont, Roboto, 'Helvetica Neue', sans-serif",
 };
 
 const fluentFontWeight = {
@@ -804,8 +806,8 @@ const fluentShadow = {
   "f-shadow8-brand": "0 0 2px rgba(0,0,0,0.30), 0 4px 8px rgba(0,0,0,0.25)",
   "f-shadow16-brand": "0 0 2px rgba(0,0,0,0.30), 0 8px 16px rgba(0,0,0,0.25)",
   "f-shadow28-brand": "0 0 8px rgba(0,0,0,0.30), 0 14px 28px rgba(0,0,0,0.25)",
-  "f-shadow64-brand": "0 0 8px rgba(0,0,0,0.30), 0 32px 64px rgba(0,0,0,0.25)"
-}
+  "f-shadow64-brand": "0 0 8px rgba(0,0,0,0.30), 0 32px 64px rgba(0,0,0,0.25)",
+};
 
 const fluentShadowColor = {
   "f-light-neutral-shadow-ambient": "rgba(0,0,0,0.24)",
@@ -824,7 +826,7 @@ const fluentShadowColor = {
   "f-dark-neutral-shadow-key-darker": "rgba(0,0,0,0.24)",
   "f-dark-brand-shadow-ambient": "rgba(0,0,0,0.30)",
   "f-dark-brand-shadow-key": "rgba(0,0,0,0.25)",
-}
+};
 
 /** @type {import('tailwindcss').Config} */
 export default {
@@ -844,11 +846,12 @@ export default {
         "auto-300": "repeat(auto-fill, minmax(300px, 1fr))",
       },
       boxShadow: {
-        ...fluentShadow
+        ...fluentShadow,
       },
       boxShadowColor: { ...fluentShadowColor },
       colors: {
-        ...fluentColor, ...fluentShadowColor
+        ...fluentColor,
+        ...fluentShadowColor,
       },
       fontFamily: { ...fluentFontFamily },
       fontWeight: { ...fluentFontWeight },

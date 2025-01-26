@@ -50,13 +50,13 @@ const ReleaseBlock = component$<{ it: ReleaseItem }>(({ it }) => (
         <a
           href={assets.browser_download_url}
           key={index}
-          class="block rounded-md bg-gray-200 p-2 hover:bg-cyan-200 hover:text-cyan-800 dark:bg-gray-800 hover:dark:bg-cyan-800 hover:dark:text-cyan-200"
+          class="block rounded-md bg-gray-200 p-2 hover:bg-cyan-200 hover:text-cyan-800 dark:bg-gray-800 dark:hover:bg-cyan-800 dark:hover:text-cyan-200"
         >
           {assets.name}
         </a>
       ))}
     </div>
-    <div class="flex flex-wrap gap-4 hover:*:text-cyan-500">
+    <div class="flex flex-wrap gap-4 *:hover:text-cyan-500">
       <a href={it.html_url}>Github</a>
       <a href={it.discussion_url}>讨论</a>
     </div>
@@ -87,7 +87,7 @@ const genAssetLinks = (runId: number) =>
     <a
       key={index}
       href={`https://nightly.link/Class-Widgets/Class-Widgets/actions/runs/${runId}/${it}.zip`}
-      class="block rounded-md bg-gray-200 p-2 hover:bg-cyan-200 hover:text-cyan-800 dark:bg-gray-800 hover:dark:bg-cyan-800 hover:dark:text-cyan-200"
+      class="block rounded-md bg-gray-200 p-2 hover:bg-cyan-200 hover:text-cyan-800 dark:bg-gray-800 dark:hover:bg-cyan-800 dark:hover:text-cyan-200"
     >
       {it}
     </a>

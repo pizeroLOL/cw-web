@@ -11,7 +11,7 @@ export interface AsideDetailProps {
 
 const AsideDetail = component$<AsideDetailProps>((input) => (
   <details>
-    <summary class="flex list-none gap-2 rounded-lg p-2 hover:bg-cyan-200 hover:dark:bg-cyan-800">
+    <summary class="flex list-none gap-2 rounded-lg p-2 hover:bg-cyan-200 dark:hover:bg-cyan-800">
       <img src={menuSrc} width={16} height={16} /> <span>{input.name}</span>
     </summary>
     <div class="ml-6">

@@ -2,12 +2,948 @@
  * Tailwind CSS imports
  * View the full documentation at https://tailwindcss.com
  */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
 
-:root {
-  color-scheme: dark light;
+@theme {
+  --radius-f-none: 0;
+  --radius-f-small: 2px;
+  --radius-f-medium: 4px;
+  --radius-f-large: 6px;
+  --radius-f-x-large: 8px;
+  --radius-f-circular: 10000px;
+
+  --transition-duration-f-ultra-fast: 50ms;
+  --transition-duration-f-faster: 100ms;
+  --transition-duration-f-fast: 150ms;
+  --transition-duration-f-normal: 200ms;
+  --transition-duration-f-gentle: 250ms;
+  --transition-duration-f-slow: 300ms;
+  --transition-duration-f-slower: 400ms;
+  --transition-duration-f-ultra-slow: 500ms;
+
+  --spacing-f-horizontal-none: 0;
+  --spacing-f-horizontal-xxs: 2px;
+  --spacing-f-horizontal-xs: 4px;
+  --spacing-f-horizontal-s-nudge: 6px;
+  --spacing-f-horizontal-s: 8px;
+  --spacing-f-horizontal-m-nudge: 10px;
+  --spacing-f-horizontal-m: 12px;
+  --spacing-f-horizontal-l: 16px;
+  --spacing-f-horizontal-xl: 20px;
+  --spacing-f-horizontal-xxl: 24px;
+  --spacing-f-horizontal-xxxl: 32px;
+  --spacing-f-vertical-none: 0;
+  --spacing-f-vertical-xxs: 2px;
+  --spacing-f-vertical-xs: 4px;
+  --spacing-f-vertical-s-nudge: 6px;
+  --spacing-f-vertical-s: 8px;
+  --spacing-f-vertical-m-nudge: 10px;
+  --spacing-f-vertical-m: 12px;
+  --spacing-f-vertical-l: 16px;
+  --spacing-f-vertical-xl: 20px;
+  --spacing-f-vertical-xxl: 24px;
+  --spacing-f-vertical-xxxl: 32px;
+
+  --text-f-base100: 10px;
+  --text-f-base200: 12px;
+  --text-f-base300: 14px;
+  --text-f-base400: 16px;
+  --text-f-base500: 20px;
+  --text-f-base600: 24px;
+  --text-f-hero700: 28px;
+  --text-f-hero800: 32px;
+  --text-f-hero900: 40px;
+  --text-f-hero1000: 68px;
+
+  --leading-f-base100: 14px;
+  --leading-f-base200: 16px;
+  --leading-f-base300: 20px;
+  --leading-f-base400: 22px;
+  --leading-f-base500: 28px;
+  --leading-f-base600: 32px;
+  --leading-f-hero700: 36px;
+  --leading-f-hero800: 40px;
+  --leading-f-hero900: 52px;
+  --leading-f-hero1000: 92px;
+
+  --grid-template-columns-auto-300: repeat(auto-fill, minmax(300px, 1fr));
+
+  --shadow-f-light-shadow2: 0 0 2px rgba(0, 0, 0, 0.24),
+    0 1px 2px rgba(0, 0, 0, 0.28);
+  --shadow-f-light-shadow4: 0 0 2px rgba(0, 0, 0, 0.24),
+    0 2px 4px rgba(0, 0, 0, 0.28);
+  --shadow-f-light-shadow8: 0 0 2px rgba(0, 0, 0, 0.24),
+    0 4px 8px rgba(0, 0, 0, 0.28);
+  --shadow-f-light-shadow16: 0 0 2px rgba(0, 0, 0, 0.24),
+    0 8px 16px rgba(0, 0, 0, 0.28);
+  --shadow-f-light-shadow28: 0 0 8px rgba(0, 0, 0, 0.24),
+    0 14px 28px rgba(0, 0, 0, 0.28);
+  --shadow-f-light-shadow64: 0 0 8px rgba(0, 0, 0, 0.24),
+    0 32px 64px rgba(0, 0, 0, 0.28);
+  --shadow-f-dark-shadow2: 0 0 2px rgba(0, 0, 0, 0.12),
+    0 1px 2px rgba(0, 0, 0, 0.14);
+  --shadow-f-dark-shadow4: 0 0 2px rgba(0, 0, 0, 0.12),
+    0 2px 4px rgba(0, 0, 0, 0.14);
+  --shadow-f-dark-shadow8: 0 0 2px rgba(0, 0, 0, 0.12),
+    0 4px 8px rgba(0, 0, 0, 0.14);
+  --shadow-f-dark-shadow16: 0 0 2px rgba(0, 0, 0, 0.12),
+    0 8px 16px rgba(0, 0, 0, 0.14);
+  --shadow-f-dark-shadow28: 0 0 8px rgba(0, 0, 0, 0.12),
+    0 14px 28px rgba(0, 0, 0, 0.14);
+  --shadow-f-dark-shadow64: 0 0 8px rgba(0, 0, 0, 0.12),
+    0 32px 64px rgba(0, 0, 0, 0.14);
+  --shadow-f-shadow2-brand: 0 0 2px rgba(0, 0, 0, 0.3),
+    0 1px 2px rgba(0, 0, 0, 0.25);
+  --shadow-f-shadow4-brand: 0 0 2px rgba(0, 0, 0, 0.3),
+    0 2px 4px rgba(0, 0, 0, 0.25);
+  --shadow-f-shadow8-brand: 0 0 2px rgba(0, 0, 0, 0.3),
+    0 4px 8px rgba(0, 0, 0, 0.25);
+  --shadow-f-shadow16-brand: 0 0 2px rgba(0, 0, 0, 0.3),
+    0 8px 16px rgba(0, 0, 0, 0.25);
+  --shadow-f-shadow28-brand: 0 0 8px rgba(0, 0, 0, 0.3),
+    0 14px 28px rgba(0, 0, 0, 0.25);
+  --shadow-f-shadow64-brand: 0 0 8px rgba(0, 0, 0, 0.3),
+    0 32px 64px rgba(0, 0, 0, 0.25);
+
+  --box-shadow-color-f-light-neutral-shadow-ambient: rgba(0, 0, 0, 0.24);
+  --box-shadow-color-f-light-neutral-shadow-key: rgba(0, 0, 0, 0.28);
+  --box-shadow-color-f-light-neutral-shadow-ambient-lighter: rgba(
+    0,
+    0,
+    0,
+    0.12
+  );
+  --box-shadow-color-f-light-neutral-shadow-key-lighter: rgba(0, 0, 0, 0.14);
+  --box-shadow-color-f-light-neutral-shadow-ambient-darker: rgba(0, 0, 0, 0.4);
+  --box-shadow-color-f-light-neutral-shadow-key-darker: rgba(0, 0, 0, 0.48);
+  --box-shadow-color-f-light-brand-shadow-ambient: rgba(0, 0, 0, 0.3);
+  --box-shadow-color-f-light-brand-shadow-key: rgba(0, 0, 0, 0.25);
+  --box-shadow-color-f-dark-neutral-shadow-ambient: rgba(0, 0, 0, 0.12);
+  --box-shadow-color-f-dark-neutral-shadow-key: rgba(0, 0, 0, 0.14);
+  --box-shadow-color-f-dark-neutral-shadow-ambient-lighter: rgba(0, 0, 0, 0.06);
+  --box-shadow-color-f-dark-neutral-shadow-key-lighter: rgba(0, 0, 0, 0.07);
+  --box-shadow-color-f-dark-neutral-shadow-ambient-darker: rgba(0, 0, 0, 0.2);
+  --box-shadow-color-f-dark-neutral-shadow-key-darker: rgba(0, 0, 0, 0.24);
+  --box-shadow-color-f-dark-brand-shadow-ambient: rgba(0, 0, 0, 0.3);
+  --box-shadow-color-f-dark-brand-shadow-key: rgba(0, 0, 0, 0.25);
+
+  --color-f-light-neutral-foreground1: #ffffff;
+  --color-f-light-neutral-foreground1-hover: #ffffff;
+  --color-f-light-neutral-foreground1-pressed: #ffffff;
+  --color-f-light-neutral-foreground1-selected: #ffffff;
+  --color-f-light-neutral-foreground2: #d6d6d6;
+  --color-f-light-neutral-foreground2-hover: #ffffff;
+  --color-f-light-neutral-foreground2-pressed: #ffffff;
+  --color-f-light-neutral-foreground2-selected: #ffffff;
+  --color-f-light-neutral-foreground2-brand-hover: #259493;
+  --color-f-light-neutral-foreground2-brand-pressed: #258483;
+  --color-f-light-neutral-foreground2-brand-selected: #259493;
+  --color-f-light-neutral-foreground3: #adadad;
+  --color-f-light-neutral-foreground3-hover: #d6d6d6;
+  --color-f-light-neutral-foreground3-pressed: #d6d6d6;
+  --color-f-light-neutral-foreground3-selected: #d6d6d6;
+  --color-f-light-neutral-foreground3-brand-hover: #259493;
+  --color-f-light-neutral-foreground3-brand-pressed: #258483;
+  --color-f-light-neutral-foreground3-brand-selected: #259493;
+  --color-f-light-neutral-foreground4: #999999;
+  --color-f-light-neutral-foreground-disabled: #5c5c5c;
+  --color-f-light-neutral-foreground-inverted-disabled: rgba(
+    255,
+    255,
+    255,
+    0.4
+  );
+  --color-f-light-brand-foreground-link: #259493;
+  --color-f-light-brand-foreground-link-hover: #25a4a3;
+  --color-f-light-brand-foreground-link-pressed: #258483;
+  --color-f-light-brand-foreground-link-selected: #259493;
+  --color-f-light-neutral-foreground2-link: #d6d6d6;
+  --color-f-light-neutral-foreground2-link-hover: #ffffff;
+  --color-f-light-neutral-foreground2-link-pressed: #ffffff;
+  --color-f-light-neutral-foreground2-link-selected: #ffffff;
+  --color-f-light-compound-brand-foreground1: #259493;
+  --color-f-light-compound-brand-foreground1-hover: #25a4a3;
+  --color-f-light-compound-brand-foreground1-pressed: #258483;
+  --color-f-light-brand-foreground1: #25a4a3;
+  --color-f-light-brand-foreground2: #23b4b3;
+  --color-f-light-brand-foreground2-hover: #21c4c4;
+  --color-f-light-brand-foreground2-pressed: #09f7f7;
+  --color-f-light-neutral-foreground1-static: #242424;
+  --color-f-light-neutral-foreground-static-inverted: #ffffff;
+  --color-f-light-neutral-foreground-inverted: #242424;
+  --color-f-light-neutral-foreground-inverted-hover: #242424;
+  --color-f-light-neutral-foreground-inverted-pressed: #242424;
+  --color-f-light-neutral-foreground-inverted-selected: #242424;
+  --color-f-light-neutral-foreground-inverted2: #242424;
+  --color-f-light-neutral-foreground-on-brand: #ffffff;
+  --color-f-light-neutral-foreground-inverted-link: #ffffff;
+  --color-f-light-neutral-foreground-inverted-link-hover: #ffffff;
+  --color-f-light-neutral-foreground-inverted-link-pressed: #ffffff;
+  --color-f-light-neutral-foreground-inverted-link-selected: #ffffff;
+  --color-f-light-brand-foreground-inverted: #247574;
+  --color-f-light-brand-foreground-inverted-hover: #226665;
+  --color-f-light-brand-foreground-inverted-pressed: #205756;
+  --color-f-light-brand-foreground-on-light: #247574;
+  --color-f-light-brand-foreground-on-light-hover: #226665;
+  --color-f-light-brand-foreground-on-light-pressed: #1d4948;
+  --color-f-light-brand-foreground-on-light-selected: #205756;
+  --color-f-light-neutral-background1: #292929;
+  --color-f-light-neutral-background1-hover: #3d3d3d;
+  --color-f-light-neutral-background1-pressed: #1f1f1f;
+  --color-f-light-neutral-background1-selected: #383838;
+  --color-f-light-neutral-background2: #1f1f1f;
+  --color-f-light-neutral-background2-hover: #333333;
+  --color-f-light-neutral-background2-pressed: #141414;
+  --color-f-light-neutral-background2-selected: #2e2e2e;
+  --color-f-light-neutral-background3: #141414;
+  --color-f-light-neutral-background3-hover: #292929;
+  --color-f-light-neutral-background3-pressed: #0a0a0a;
+  --color-f-light-neutral-background3-selected: #242424;
+  --color-f-light-neutral-background4: #0a0a0a;
+  --color-f-light-neutral-background4-hover: #1f1f1f;
+  --color-f-light-neutral-background4-pressed: #000000;
+  --color-f-light-neutral-background4-selected: #1a1a1a;
+  --color-f-light-neutral-background5: #000000;
+  --color-f-light-neutral-background5-hover: #141414;
+  --color-f-light-neutral-background5-pressed: #050505;
+  --color-f-light-neutral-background5-selected: #0f0f0f;
+  --color-f-light-neutral-background6: #333333;
+  --color-f-light-neutral-background-inverted: #ffffff;
+  --color-f-light-neutral-background-static: #3d3d3d;
+  --color-f-light-neutral-background-alpha: rgba(26, 26, 26, 0.5);
+  --color-f-light-neutral-background-alpha2: rgba(31, 31, 31, 0.7);
+  --color-f-light-subtle-background: transparent;
+  --color-f-light-subtle-background-hover: #383838;
+  --color-f-light-subtle-background-pressed: #2e2e2e;
+  --color-f-light-subtle-background-selected: #333333;
+  --color-f-light-subtle-background-light-alpha-hover: rgba(36, 36, 36, 0.8);
+  --color-f-light-subtle-background-light-alpha-pressed: rgba(36, 36, 36, 0.5);
+  --color-f-light-subtle-background-light-alpha-selected: transparent;
+  --color-f-light-subtle-background-inverted: transparent;
+  --color-f-light-subtle-background-inverted-hover: rgba(0, 0, 0, 0.1);
+  --color-f-light-subtle-background-inverted-pressed: rgba(0, 0, 0, 0.3);
+  --color-f-light-subtle-background-inverted-selected: rgba(0, 0, 0, 0.2);
+  --color-f-light-transparent-background: transparent;
+  --color-f-light-transparent-background-hover: transparent;
+  --color-f-light-transparent-background-pressed: transparent;
+  --color-f-light-transparent-background-selected: transparent;
+  --color-f-light-neutral-background-disabled: #141414;
+  --color-f-light-neutral-background-inverted-disabled: rgba(
+    255,
+    255,
+    255,
+    0.1
+  );
+  --color-f-light-neutral-stencil1: #575757;
+  --color-f-light-neutral-stencil2: #333333;
+  --color-f-light-neutral-stencil1-alpha: rgba(255, 255, 255, 0.1);
+  --color-f-light-neutral-stencil2-alpha: rgba(255, 255, 255, 0.05);
+  --color-f-light-background-overlay: rgba(0, 0, 0, 0.5);
+  --color-f-light-scrollbar-overlay: rgba(255, 255, 255, 0.6);
+  --color-f-light-brand-background: #226665;
+  --color-f-light-brand-background-hover: #247574;
+  --color-f-light-brand-background-pressed: #1a3b3a;
+  --color-f-light-brand-background-selected: #205756;
+  --color-f-light-compound-brand-background: #259493;
+  --color-f-light-compound-brand-background-hover: #25a4a3;
+  --color-f-light-compound-brand-background-pressed: #258483;
+  --color-f-light-brand-background-static: #247574;
+  --color-f-light-brand-background2: #111b1b;
+  --color-f-light-brand-background2-hover: #1a3b3a;
+  --color-f-light-brand-background2-pressed: #020404;
+  --color-f-light-brand-background3-static: #205756;
+  --color-f-light-brand-background4-static: #1a3b3a;
+  --color-f-light-brand-background-inverted: #ffffff;
+  --color-f-light-brand-background-inverted-hover: #09f7f7;
+  --color-f-light-brand-background-inverted-pressed: #1dd5d5;
+  --color-f-light-brand-background-inverted-selected: #16e6e6;
+  --color-f-light-neutral-card-background: #333333;
+  --color-f-light-neutral-card-background-hover: #3d3d3d;
+  --color-f-light-neutral-card-background-pressed: #2e2e2e;
+  --color-f-light-neutral-card-background-selected: #383838;
+  --color-f-light-neutral-card-background-disabled: #141414;
+  --color-f-light-neutral-stroke-accessible: #adadad;
+  --color-f-light-neutral-stroke-accessible-hover: #bdbdbd;
+  --color-f-light-neutral-stroke-accessible-pressed: #b3b3b3;
+  --color-f-light-neutral-stroke-accessible-selected: #259493;
+  --color-f-light-neutral-stroke1: #666666;
+  --color-f-light-neutral-stroke1-hover: #757575;
+  --color-f-light-neutral-stroke1-pressed: #6b6b6b;
+  --color-f-light-neutral-stroke1-selected: #707070;
+  --color-f-light-neutral-stroke2: #525252;
+  --color-f-light-neutral-stroke3: #3d3d3d;
+  --color-f-light-neutral-stroke-subtle: #0a0a0a;
+  --color-f-light-neutral-stroke-on-brand: #292929;
+  --color-f-light-neutral-stroke-on-brand2: #ffffff;
+  --color-f-light-neutral-stroke-on-brand2-hover: #ffffff;
+  --color-f-light-neutral-stroke-on-brand2-pressed: #ffffff;
+  --color-f-light-neutral-stroke-on-brand2-selected: #ffffff;
+  --color-f-light-brand-stroke1: #259493;
+  --color-f-light-brand-stroke2: #1d4948;
+  --color-f-light-brand-stroke2-hover: #1d4948;
+  --color-f-light-brand-stroke2-pressed: #172e2d;
+  --color-f-light-brand-stroke2-contrast: #1d4948;
+  --color-f-light-compound-brand-stroke: #259493;
+  --color-f-light-compound-brand-stroke-hover: #25a4a3;
+  --color-f-light-compound-brand-stroke-pressed: #258483;
+  --color-f-light-neutral-stroke-disabled: #424242;
+  --color-f-light-neutral-stroke-inverted-disabled: rgba(255, 255, 255, 0.4);
+  --color-f-light-transparent-stroke: transparent;
+  --color-f-light-transparent-stroke-interactive: transparent;
+  --color-f-light-transparent-stroke-disabled: transparent;
+  --color-f-light-neutral-stroke-alpha: rgba(255, 255, 255, 0.1);
+  --color-f-light-neutral-stroke-alpha2: rgba(255, 255, 255, 0.2);
+  --color-f-light-stroke-focus1: #000000;
+  --color-f-light-stroke-focus2: #ffffff;
+  --color-f-light-palette-red-background1: #3f1011;
+  --color-f-light-palette-red-background2: #751d1f;
+  --color-f-light-palette-red-background3: #d13438;
+  --color-f-light-palette-red-foreground1: #e37d80;
+  --color-f-light-palette-red-foreground2: #f1bbbc;
+  --color-f-light-palette-red-foreground3: #e37d80;
+  --color-f-light-palette-red-border-active: #e37d80;
+  --color-f-light-palette-red-border1: #d13438;
+  --color-f-light-palette-red-border2: #e37d80;
+  --color-f-light-palette-green-background1: #052505;
+  --color-f-light-palette-green-background2: #094509;
+  --color-f-light-palette-green-background3: #107c10;
+  --color-f-light-palette-green-foreground1: #54b054;
+  --color-f-light-palette-green-foreground2: #9fd89f;
+  --color-f-light-palette-green-foreground3: #9fd89f;
+  --color-f-light-palette-green-border-active: #54b054;
+  --color-f-light-palette-green-border1: #107c10;
+  --color-f-light-palette-green-border2: #9fd89f;
+  --color-f-light-palette-dark-orange-background1: #411200;
+  --color-f-light-palette-dark-orange-background2: #7a2101;
+  --color-f-light-palette-dark-orange-background3: #da3b01;
+  --color-f-light-palette-dark-orange-foreground1: #e9835e;
+  --color-f-light-palette-dark-orange-foreground2: #f4bfab;
+  --color-f-light-palette-dark-orange-foreground3: #e9835e;
+  --color-f-light-palette-dark-orange-border-active: #e9835e;
+  --color-f-light-palette-dark-orange-border1: #da3b01;
+  --color-f-light-palette-dark-orange-border2: #e9835e;
+  --color-f-light-palette-yellow-background1: #4c4400;
+  --color-f-light-palette-yellow-background2: #817400;
+  --color-f-light-palette-yellow-background3: #fde300;
+  --color-f-light-palette-yellow-foreground1: #feee66;
+  --color-f-light-palette-yellow-foreground2: #fef7b2;
+  --color-f-light-palette-yellow-foreground3: #fdea3d;
+  --color-f-light-palette-yellow-border-active: #feee66;
+  --color-f-light-palette-yellow-border1: #fde300;
+  --color-f-light-palette-yellow-border2: #fdea3d;
+  --color-f-light-palette-berry-background1: #3a1136;
+  --color-f-light-palette-berry-background2: #6d2064;
+  --color-f-light-palette-berry-background3: #c239b3;
+  --color-f-light-palette-berry-foreground1: #da7ed0;
+  --color-f-light-palette-berry-foreground2: #edbbe7;
+  --color-f-light-palette-berry-foreground3: #d161c4;
+  --color-f-light-palette-berry-border-active: #da7ed0;
+  --color-f-light-palette-berry-border1: #c239b3;
+  --color-f-light-palette-berry-border2: #d161c4;
+  --color-f-light-palette-light-green-background1: #063004;
+  --color-f-light-palette-light-green-background2: #0b5a08;
+  --color-f-light-palette-light-green-background3: #13a10e;
+  --color-f-light-palette-light-green-foreground1: #5ec75a;
+  --color-f-light-palette-light-green-foreground2: #a7e3a5;
+  --color-f-light-palette-light-green-foreground3: #3db838;
+  --color-f-light-palette-light-green-border-active: #5ec75a;
+  --color-f-light-palette-light-green-border1: #13a10e;
+  --color-f-light-palette-light-green-border2: #3db838;
+  --color-f-light-palette-marigold-background1: #463100;
+  --color-f-light-palette-marigold-background2: #835b00;
+  --color-f-light-palette-marigold-background3: #eaa300;
+  --color-f-light-palette-marigold-foreground1: #f2c661;
+  --color-f-light-palette-marigold-foreground2: #f9e2ae;
+  --color-f-light-palette-marigold-foreground3: #efb839;
+  --color-f-light-palette-marigold-border-active: #f2c661;
+  --color-f-light-palette-marigold-border1: #eaa300;
+  --color-f-light-palette-marigold-border2: #efb839;
+  --color-f-light-palette-red-foreground-inverted: #d13438;
+  --color-f-light-palette-green-foreground-inverted: #107c10;
+  --color-f-light-palette-yellow-foreground-inverted: #817400;
+  --color-f-light-palette-dark-red-background2: #590815;
+  --color-f-light-palette-dark-red-foreground2: #d69ca5;
+  --color-f-light-palette-dark-red-border-active: #ac4f5e;
+  --color-f-light-palette-cranberry-background2: #6e0811;
+  --color-f-light-palette-cranberry-foreground2: #eeacb2;
+  --color-f-light-palette-cranberry-border-active: #dc626d;
+  --color-f-light-palette-pumpkin-background2: #712d09;
+  --color-f-light-palette-pumpkin-foreground2: #efc4ad;
+  --color-f-light-palette-pumpkin-border-active: #df8e64;
+  --color-f-light-palette-peach-background2: #8f4e00;
+  --color-f-light-palette-peach-foreground2: #ffddb3;
+  --color-f-light-palette-peach-border-active: #ffba66;
+  --color-f-light-palette-gold-background2: #6c5700;
+  --color-f-light-palette-gold-foreground2: #ecdfa5;
+  --color-f-light-palette-gold-border-active: #dac157;
+  --color-f-light-palette-brass-background2: #553e06;
+  --color-f-light-palette-brass-foreground2: #e0cea2;
+  --color-f-light-palette-brass-border-active: #c1a256;
+  --color-f-light-palette-brown-background2: #50301a;
+  --color-f-light-palette-brown-foreground2: #ddc3b0;
+  --color-f-light-palette-brown-border-active: #bb8f6f;
+  --color-f-light-palette-forest-background2: #294903;
+  --color-f-light-palette-forest-foreground2: #bdd99b;
+  --color-f-light-palette-forest-border-active: #85b44c;
+  --color-f-light-palette-seafoam-background2: #00723b;
+  --color-f-light-palette-seafoam-foreground2: #a8f0cd;
+  --color-f-light-palette-seafoam-border-active: #5ae0a0;
+  --color-f-light-palette-dark-green-background2: #063b06;
+  --color-f-light-palette-dark-green-foreground2: #9ad29a;
+  --color-f-light-palette-dark-green-border-active: #4da64d;
+  --color-f-light-palette-light-teal-background2: #00666d;
+  --color-f-light-palette-light-teal-foreground2: #a6e9ed;
+  --color-f-light-palette-light-teal-border-active: #58d3db;
+  --color-f-light-palette-teal-background2: #02494c;
+  --color-f-light-palette-teal-foreground2: #9bd9db;
+  --color-f-light-palette-teal-border-active: #4cb4b7;
+  --color-f-light-palette-steel-background2: #00333f;
+  --color-f-light-palette-steel-foreground2: #94c8d4;
+  --color-f-light-palette-steel-border-active: #4496a9;
+  --color-f-light-palette-blue-background2: #004377;
+  --color-f-light-palette-blue-foreground2: #a9d3f2;
+  --color-f-light-palette-blue-border-active: #5caae5;
+  --color-f-light-palette-royal-blue-background2: #002c4e;
+  --color-f-light-palette-royal-blue-foreground2: #9abfdc;
+  --color-f-light-palette-royal-blue-border-active: #4a89ba;
+  --color-f-light-palette-cornflower-background2: #2c3c85;
+  --color-f-light-palette-cornflower-foreground2: #c8d1fa;
+  --color-f-light-palette-cornflower-border-active: #93a4f4;
+  --color-f-light-palette-navy-background2: #001665;
+  --color-f-light-palette-navy-foreground2: #a3b2e8;
+  --color-f-light-palette-navy-border-active: #546fd2;
+  --color-f-light-palette-lavender-background2: #3f3682;
+  --color-f-light-palette-lavender-foreground2: #d2ccf8;
+  --color-f-light-palette-lavender-border-active: #a79cf1;
+  --color-f-light-palette-purple-background2: #341a51;
+  --color-f-light-palette-purple-foreground2: #c6b1de;
+  --color-f-light-palette-purple-border-active: #9470bd;
+  --color-f-light-palette-grape-background2: #4c0d55;
+  --color-f-light-palette-grape-foreground2: #d9a7e0;
+  --color-f-light-palette-grape-border-active: #b55fc1;
+  --color-f-light-palette-lilac-background2: #63276d;
+  --color-f-light-palette-lilac-foreground2: #e6bfed;
+  --color-f-light-palette-lilac-border-active: #cf87da;
+  --color-f-light-palette-pink-background2: #80215d;
+  --color-f-light-palette-pink-foreground2: #f7c0e3;
+  --color-f-light-palette-pink-border-active: #ef85c8;
+  --color-f-light-palette-magenta-background2: #6b0043;
+  --color-f-light-palette-magenta-foreground2: #eca5d1;
+  --color-f-light-palette-magenta-border-active: #d957a8;
+  --color-f-light-palette-plum-background2: #5a003b;
+  --color-f-light-palette-plum-foreground2: #d696c0;
+  --color-f-light-palette-plum-border-active: #ad4589;
+  --color-f-light-palette-beige-background2: #444241;
+  --color-f-light-palette-beige-foreground2: #d7d4d4;
+  --color-f-light-palette-beige-border-active: #afabaa;
+  --color-f-light-palette-mink-background2: #343231;
+  --color-f-light-palette-mink-foreground2: #cecccb;
+  --color-f-light-palette-mink-border-active: #9e9b99;
+  --color-f-light-palette-platinum-background2: #3b4447;
+  --color-f-light-palette-platinum-foreground2: #cdd6d8;
+  --color-f-light-palette-platinum-border-active: #a0adb2;
+  --color-f-light-palette-anchor-background2: #202427;
+  --color-f-light-palette-anchor-foreground2: #bcc3c7;
+  --color-f-light-palette-anchor-border-active: #808a90;
+  --color-f-light-status-success-background1: #052505;
+  --color-f-light-status-success-background2: #094509;
+  --color-f-light-status-success-background3: #107c10;
+  --color-f-light-status-success-foreground1: #54b054;
+  --color-f-light-status-success-foreground2: #9fd89f;
+  --color-f-light-status-success-foreground3: #9fd89f;
+  --color-f-light-status-success-border-active: #54b054;
+  --color-f-light-status-success-foreground-inverted: #0e700e;
+  --color-f-light-status-success-border1: #107c10;
+  --color-f-light-status-success-border2: #9fd89f;
+  --color-f-light-status-warning-background1: #4a1e04;
+  --color-f-light-status-warning-background2: #8a3707;
+  --color-f-light-status-warning-background3: #f7630c;
+  --color-f-light-status-warning-foreground1: #faa06b;
+  --color-f-light-status-warning-foreground2: #fdcfb4;
+  --color-f-light-status-warning-foreground3: #f98845;
+  --color-f-light-status-warning-border-active: #faa06b;
+  --color-f-light-status-warning-foreground-inverted: #bc4b09;
+  --color-f-light-status-warning-border1: #f7630c;
+  --color-f-light-status-warning-border2: #f98845;
+  --color-f-light-status-danger-background1: #3b0509;
+  --color-f-light-status-danger-background2: #6e0811;
+  --color-f-light-status-danger-background3: #c50f1f;
+  --color-f-light-status-danger-foreground1: #dc626d;
+  --color-f-light-status-danger-foreground2: #eeacb2;
+  --color-f-light-status-danger-foreground3: #eeacb2;
+  --color-f-light-status-danger-border-active: #dc626d;
+  --color-f-light-status-danger-foreground-inverted: #b10e1c;
+  --color-f-light-status-danger-border1: #c50f1f;
+  --color-f-light-status-danger-border2: #dc626d;
+  --color-f-light-status-danger-background3-hover: #b10e1c;
+  --color-f-light-status-danger-background3-pressed: #960b18;
+  --color-f-dark-neutral-foreground1: #242424;
+  --color-f-dark-neutral-foreground1-hover: #242424;
+  --color-f-dark-neutral-foreground1-pressed: #242424;
+  --color-f-dark-neutral-foreground1-selected: #242424;
+  --color-f-dark-neutral-foreground2: #424242;
+  --color-f-dark-neutral-foreground2-hover: #242424;
+  --color-f-dark-neutral-foreground2-pressed: #242424;
+  --color-f-dark-neutral-foreground2-selected: #242424;
+  --color-f-dark-neutral-foreground2-brand-hover: #247574;
+  --color-f-dark-neutral-foreground2-brand-pressed: #226665;
+  --color-f-dark-neutral-foreground2-brand-selected: #247574;
+  --color-f-dark-neutral-foreground3: #616161;
+  --color-f-dark-neutral-foreground3-hover: #424242;
+  --color-f-dark-neutral-foreground3-pressed: #424242;
+  --color-f-dark-neutral-foreground3-selected: #424242;
+  --color-f-dark-neutral-foreground3-brand-hover: #247574;
+  --color-f-dark-neutral-foreground3-brand-pressed: #226665;
+  --color-f-dark-neutral-foreground3-brand-selected: #247574;
+  --color-f-dark-neutral-foreground4: #707070;
+  --color-f-dark-neutral-foreground-disabled: #bdbdbd;
+  --color-f-dark-neutral-foreground-inverted-disabled: rgba(255, 255, 255, 0.4);
+  --color-f-dark-brand-foreground-link: #226665;
+  --color-f-dark-brand-foreground-link-hover: #205756;
+  --color-f-dark-brand-foreground-link-pressed: #1a3b3a;
+  --color-f-dark-brand-foreground-link-selected: #226665;
+  --color-f-dark-neutral-foreground2-link: #424242;
+  --color-f-dark-neutral-foreground2-link-hover: #242424;
+  --color-f-dark-neutral-foreground2-link-pressed: #242424;
+  --color-f-dark-neutral-foreground2-link-selected: #242424;
+  --color-f-dark-compound-brand-foreground1: #247574;
+  --color-f-dark-compound-brand-foreground1-hover: #226665;
+  --color-f-dark-compound-brand-foreground1-pressed: #205756;
+  --color-f-dark-brand-foreground1: #247574;
+  --color-f-dark-brand-foreground2: #226665;
+  --color-f-dark-brand-foreground2-hover: #205756;
+  --color-f-dark-brand-foreground2-pressed: #172e2d;
+  --color-f-dark-neutral-foreground1-static: #242424;
+  --color-f-dark-neutral-foreground-static-inverted: #ffffff;
+  --color-f-dark-neutral-foreground-inverted: #ffffff;
+  --color-f-dark-neutral-foreground-inverted-hover: #ffffff;
+  --color-f-dark-neutral-foreground-inverted-pressed: #ffffff;
+  --color-f-dark-neutral-foreground-inverted-selected: #ffffff;
+  --color-f-dark-neutral-foreground-inverted2: #ffffff;
+  --color-f-dark-neutral-foreground-on-brand: #ffffff;
+  --color-f-dark-neutral-foreground-inverted-link: #ffffff;
+  --color-f-dark-neutral-foreground-inverted-link-hover: #ffffff;
+  --color-f-dark-neutral-foreground-inverted-link-pressed: #ffffff;
+  --color-f-dark-neutral-foreground-inverted-link-selected: #ffffff;
+  --color-f-dark-brand-foreground-inverted: #259493;
+  --color-f-dark-brand-foreground-inverted-hover: #25a4a3;
+  --color-f-dark-brand-foreground-inverted-pressed: #259493;
+  --color-f-dark-brand-foreground-on-light: #247574;
+  --color-f-dark-brand-foreground-on-light-hover: #226665;
+  --color-f-dark-brand-foreground-on-light-pressed: #1d4948;
+  --color-f-dark-brand-foreground-on-light-selected: #205756;
+  --color-f-dark-neutral-background1: #ffffff;
+  --color-f-dark-neutral-background1-hover: #f5f5f5;
+  --color-f-dark-neutral-background1-pressed: #e0e0e0;
+  --color-f-dark-neutral-background1-selected: #ebebeb;
+  --color-f-dark-neutral-background2: #fafafa;
+  --color-f-dark-neutral-background2-hover: #f0f0f0;
+  --color-f-dark-neutral-background2-pressed: #dbdbdb;
+  --color-f-dark-neutral-background2-selected: #e6e6e6;
+  --color-f-dark-neutral-background3: #f5f5f5;
+  --color-f-dark-neutral-background3-hover: #ebebeb;
+  --color-f-dark-neutral-background3-pressed: #d6d6d6;
+  --color-f-dark-neutral-background3-selected: #e0e0e0;
+  --color-f-dark-neutral-background4: #f0f0f0;
+  --color-f-dark-neutral-background4-hover: #fafafa;
+  --color-f-dark-neutral-background4-pressed: #f5f5f5;
+  --color-f-dark-neutral-background4-selected: #ffffff;
+  --color-f-dark-neutral-background5: #ebebeb;
+  --color-f-dark-neutral-background5-hover: #f5f5f5;
+  --color-f-dark-neutral-background5-pressed: #f0f0f0;
+  --color-f-dark-neutral-background5-selected: #fafafa;
+  --color-f-dark-neutral-background6: #e6e6e6;
+  --color-f-dark-neutral-background-inverted: #292929;
+  --color-f-dark-neutral-background-static: #333333;
+  --color-f-dark-neutral-background-alpha: rgba(255, 255, 255, 0.5);
+  --color-f-dark-neutral-background-alpha2: rgba(255, 255, 255, 0.8);
+  --color-f-dark-subtle-background: transparent;
+  --color-f-dark-subtle-background-hover: #f5f5f5;
+  --color-f-dark-subtle-background-pressed: #e0e0e0;
+  --color-f-dark-subtle-background-selected: #ebebeb;
+  --color-f-dark-subtle-background-light-alpha-hover: rgba(255, 255, 255, 0.7);
+  --color-f-dark-subtle-background-light-alpha-pressed: rgba(
+    255,
+    255,
+    255,
+    0.5
+  );
+  --color-f-dark-subtle-background-light-alpha-selected: transparent;
+  --color-f-dark-subtle-background-inverted: transparent;
+  --color-f-dark-subtle-background-inverted-hover: rgba(0, 0, 0, 0.1);
+  --color-f-dark-subtle-background-inverted-pressed: rgba(0, 0, 0, 0.3);
+  --color-f-dark-subtle-background-inverted-selected: rgba(0, 0, 0, 0.2);
+  --color-f-dark-transparent-background: transparent;
+  --color-f-dark-transparent-background-hover: transparent;
+  --color-f-dark-transparent-background-pressed: transparent;
+  --color-f-dark-transparent-background-selected: transparent;
+  --color-f-dark-neutral-background-disabled: #f0f0f0;
+  --color-f-dark-neutral-background-inverted-disabled: rgba(255, 255, 255, 0.1);
+  --color-f-dark-neutral-stencil1: #e6e6e6;
+  --color-f-dark-neutral-stencil2: #fafafa;
+  --color-f-dark-neutral-stencil1-alpha: rgba(0, 0, 0, 0.1);
+  --color-f-dark-neutral-stencil2-alpha: rgba(0, 0, 0, 0.05);
+  --color-f-dark-background-overlay: rgba(0, 0, 0, 0.4);
+  --color-f-dark-scrollbar-overlay: rgba(0, 0, 0, 0.5);
+  --color-f-dark-brand-background: #247574;
+  --color-f-dark-brand-background-hover: #226665;
+  --color-f-dark-brand-background-pressed: #1a3b3a;
+  --color-f-dark-brand-background-selected: #205756;
+  --color-f-dark-compound-brand-background: #247574;
+  --color-f-dark-compound-brand-background-hover: #226665;
+  --color-f-dark-compound-brand-background-pressed: #205756;
+  --color-f-dark-brand-background-static: #247574;
+  --color-f-dark-brand-background2: #09f7f7;
+  --color-f-dark-brand-background2-hover: #16e6e6;
+  --color-f-dark-brand-background2-pressed: #21c4c4;
+  --color-f-dark-brand-background3-static: #205756;
+  --color-f-dark-brand-background4-static: #1a3b3a;
+  --color-f-dark-brand-background-inverted: #ffffff;
+  --color-f-dark-brand-background-inverted-hover: #09f7f7;
+  --color-f-dark-brand-background-inverted-pressed: #1dd5d5;
+  --color-f-dark-brand-background-inverted-selected: #16e6e6;
+  --color-f-dark-neutral-card-background: #fafafa;
+  --color-f-dark-neutral-card-background-hover: #ffffff;
+  --color-f-dark-neutral-card-background-pressed: #f5f5f5;
+  --color-f-dark-neutral-card-background-selected: #ebebeb;
+  --color-f-dark-neutral-card-background-disabled: #f0f0f0;
+  --color-f-dark-neutral-stroke-accessible: #616161;
+  --color-f-dark-neutral-stroke-accessible-hover: #575757;
+  --color-f-dark-neutral-stroke-accessible-pressed: #4d4d4d;
+  --color-f-dark-neutral-stroke-accessible-selected: #247574;
+  --color-f-dark-neutral-stroke1: #d1d1d1;
+  --color-f-dark-neutral-stroke1-hover: #c7c7c7;
+  --color-f-dark-neutral-stroke1-pressed: #b3b3b3;
+  --color-f-dark-neutral-stroke1-selected: #bdbdbd;
+  --color-f-dark-neutral-stroke2: #e0e0e0;
+  --color-f-dark-neutral-stroke3: #f0f0f0;
+  --color-f-dark-neutral-stroke-subtle: #e0e0e0;
+  --color-f-dark-neutral-stroke-on-brand: #ffffff;
+  --color-f-dark-neutral-stroke-on-brand2: #ffffff;
+  --color-f-dark-neutral-stroke-on-brand2-hover: #ffffff;
+  --color-f-dark-neutral-stroke-on-brand2-pressed: #ffffff;
+  --color-f-dark-neutral-stroke-on-brand2-selected: #ffffff;
+  --color-f-dark-brand-stroke1: #247574;
+  --color-f-dark-brand-stroke2: #1dd5d5;
+  --color-f-dark-brand-stroke2-hover: #23b4b3;
+  --color-f-dark-brand-stroke2-pressed: #247574;
+  --color-f-dark-brand-stroke2-contrast: #1dd5d5;
+  --color-f-dark-compound-brand-stroke: #247574;
+  --color-f-dark-compound-brand-stroke-hover: #226665;
+  --color-f-dark-compound-brand-stroke-pressed: #205756;
+  --color-f-dark-neutral-stroke-disabled: #e0e0e0;
+  --color-f-dark-neutral-stroke-inverted-disabled: rgba(255, 255, 255, 0.4);
+  --color-f-dark-transparent-stroke: transparent;
+  --color-f-dark-transparent-stroke-interactive: transparent;
+  --color-f-dark-transparent-stroke-disabled: transparent;
+  --color-f-dark-neutral-stroke-alpha: rgba(0, 0, 0, 0.05);
+  --color-f-dark-neutral-stroke-alpha2: rgba(255, 255, 255, 0.2);
+  --color-f-dark-stroke-focus1: #ffffff;
+  --color-f-dark-stroke-focus2: #000000;
+  --color-f-dark-palette-red-background1: #fdf6f6;
+  --color-f-dark-palette-red-background2: #f1bbbc;
+  --color-f-dark-palette-red-background3: #d13438;
+  --color-f-dark-palette-red-foreground1: #bc2f32;
+  --color-f-dark-palette-red-foreground2: #751d1f;
+  --color-f-dark-palette-red-foreground3: #d13438;
+  --color-f-dark-palette-red-border-active: #d13438;
+  --color-f-dark-palette-red-border1: #f1bbbc;
+  --color-f-dark-palette-red-border2: #d13438;
+  --color-f-dark-palette-green-background1: #f1faf1;
+  --color-f-dark-palette-green-background2: #9fd89f;
+  --color-f-dark-palette-green-background3: #107c10;
+  --color-f-dark-palette-green-foreground1: #0e700e;
+  --color-f-dark-palette-green-foreground2: #094509;
+  --color-f-dark-palette-green-foreground3: #107c10;
+  --color-f-dark-palette-green-border-active: #107c10;
+  --color-f-dark-palette-green-border1: #9fd89f;
+  --color-f-dark-palette-green-border2: #107c10;
+  --color-f-dark-palette-dark-orange-background1: #fdf6f3;
+  --color-f-dark-palette-dark-orange-background2: #f4bfab;
+  --color-f-dark-palette-dark-orange-background3: #da3b01;
+  --color-f-dark-palette-dark-orange-foreground1: #c43501;
+  --color-f-dark-palette-dark-orange-foreground2: #7a2101;
+  --color-f-dark-palette-dark-orange-foreground3: #da3b01;
+  --color-f-dark-palette-dark-orange-border-active: #da3b01;
+  --color-f-dark-palette-dark-orange-border1: #f4bfab;
+  --color-f-dark-palette-dark-orange-border2: #da3b01;
+  --color-f-dark-palette-yellow-background1: #fffef5;
+  --color-f-dark-palette-yellow-background2: #fef7b2;
+  --color-f-dark-palette-yellow-background3: #fde300;
+  --color-f-dark-palette-yellow-foreground1: #817400;
+  --color-f-dark-palette-yellow-foreground2: #817400;
+  --color-f-dark-palette-yellow-foreground3: #fde300;
+  --color-f-dark-palette-yellow-border-active: #fde300;
+  --color-f-dark-palette-yellow-border1: #fef7b2;
+  --color-f-dark-palette-yellow-border2: #fde300;
+  --color-f-dark-palette-berry-background1: #fdf5fc;
+  --color-f-dark-palette-berry-background2: #edbbe7;
+  --color-f-dark-palette-berry-background3: #c239b3;
+  --color-f-dark-palette-berry-foreground1: #af33a1;
+  --color-f-dark-palette-berry-foreground2: #6d2064;
+  --color-f-dark-palette-berry-foreground3: #c239b3;
+  --color-f-dark-palette-berry-border-active: #c239b3;
+  --color-f-dark-palette-berry-border1: #edbbe7;
+  --color-f-dark-palette-berry-border2: #c239b3;
+  --color-f-dark-palette-light-green-background1: #f2fbf2;
+  --color-f-dark-palette-light-green-background2: #a7e3a5;
+  --color-f-dark-palette-light-green-background3: #13a10e;
+  --color-f-dark-palette-light-green-foreground1: #11910d;
+  --color-f-dark-palette-light-green-foreground2: #0b5a08;
+  --color-f-dark-palette-light-green-foreground3: #13a10e;
+  --color-f-dark-palette-light-green-border-active: #13a10e;
+  --color-f-dark-palette-light-green-border1: #a7e3a5;
+  --color-f-dark-palette-light-green-border2: #13a10e;
+  --color-f-dark-palette-marigold-background1: #fefbf4;
+  --color-f-dark-palette-marigold-background2: #f9e2ae;
+  --color-f-dark-palette-marigold-background3: #eaa300;
+  --color-f-dark-palette-marigold-foreground1: #d39300;
+  --color-f-dark-palette-marigold-foreground2: #835b00;
+  --color-f-dark-palette-marigold-foreground3: #eaa300;
+  --color-f-dark-palette-marigold-border-active: #eaa300;
+  --color-f-dark-palette-marigold-border1: #f9e2ae;
+  --color-f-dark-palette-marigold-border2: #eaa300;
+  --color-f-dark-palette-red-foreground-inverted: #dc5e62;
+  --color-f-dark-palette-green-foreground-inverted: #359b35;
+  --color-f-dark-palette-yellow-foreground-inverted: #fef7b2;
+  --color-f-dark-palette-dark-red-background2: #d69ca5;
+  --color-f-dark-palette-dark-red-foreground2: #420610;
+  --color-f-dark-palette-dark-red-border-active: #750b1c;
+  --color-f-dark-palette-cranberry-background2: #eeacb2;
+  --color-f-dark-palette-cranberry-foreground2: #6e0811;
+  --color-f-dark-palette-cranberry-border-active: #c50f1f;
+  --color-f-dark-palette-pumpkin-background2: #efc4ad;
+  --color-f-dark-palette-pumpkin-foreground2: #712d09;
+  --color-f-dark-palette-pumpkin-border-active: #ca5010;
+  --color-f-dark-palette-peach-background2: #ffddb3;
+  --color-f-dark-palette-peach-foreground2: #8f4e00;
+  --color-f-dark-palette-peach-border-active: #ff8c00;
+  --color-f-dark-palette-gold-background2: #ecdfa5;
+  --color-f-dark-palette-gold-foreground2: #6c5700;
+  --color-f-dark-palette-gold-border-active: #c19c00;
+  --color-f-dark-palette-brass-background2: #e0cea2;
+  --color-f-dark-palette-brass-foreground2: #553e06;
+  --color-f-dark-palette-brass-border-active: #986f0b;
+  --color-f-dark-palette-brown-background2: #ddc3b0;
+  --color-f-dark-palette-brown-foreground2: #50301a;
+  --color-f-dark-palette-brown-border-active: #8e562e;
+  --color-f-dark-palette-forest-background2: #bdd99b;
+  --color-f-dark-palette-forest-foreground2: #294903;
+  --color-f-dark-palette-forest-border-active: #498205;
+  --color-f-dark-palette-seafoam-background2: #a8f0cd;
+  --color-f-dark-palette-seafoam-foreground2: #00723b;
+  --color-f-dark-palette-seafoam-border-active: #00cc6a;
+  --color-f-dark-palette-dark-green-background2: #9ad29a;
+  --color-f-dark-palette-dark-green-foreground2: #063b06;
+  --color-f-dark-palette-dark-green-border-active: #0b6a0b;
+  --color-f-dark-palette-light-teal-background2: #a6e9ed;
+  --color-f-dark-palette-light-teal-foreground2: #00666d;
+  --color-f-dark-palette-light-teal-border-active: #00b7c3;
+  --color-f-dark-palette-teal-background2: #9bd9db;
+  --color-f-dark-palette-teal-foreground2: #02494c;
+  --color-f-dark-palette-teal-border-active: #038387;
+  --color-f-dark-palette-steel-background2: #94c8d4;
+  --color-f-dark-palette-steel-foreground2: #00333f;
+  --color-f-dark-palette-steel-border-active: #005b70;
+  --color-f-dark-palette-blue-background2: #a9d3f2;
+  --color-f-dark-palette-blue-foreground2: #004377;
+  --color-f-dark-palette-blue-border-active: #0078d4;
+  --color-f-dark-palette-royal-blue-background2: #9abfdc;
+  --color-f-dark-palette-royal-blue-foreground2: #002c4e;
+  --color-f-dark-palette-royal-blue-border-active: #004e8c;
+  --color-f-dark-palette-cornflower-background2: #c8d1fa;
+  --color-f-dark-palette-cornflower-foreground2: #2c3c85;
+  --color-f-dark-palette-cornflower-border-active: #4f6bed;
+  --color-f-dark-palette-navy-background2: #a3b2e8;
+  --color-f-dark-palette-navy-foreground2: #001665;
+  --color-f-dark-palette-navy-border-active: #0027b4;
+  --color-f-dark-palette-lavender-background2: #d2ccf8;
+  --color-f-dark-palette-lavender-foreground2: #3f3682;
+  --color-f-dark-palette-lavender-border-active: #7160e8;
+  --color-f-dark-palette-purple-background2: #c6b1de;
+  --color-f-dark-palette-purple-foreground2: #341a51;
+  --color-f-dark-palette-purple-border-active: #5c2e91;
+  --color-f-dark-palette-grape-background2: #d9a7e0;
+  --color-f-dark-palette-grape-foreground2: #4c0d55;
+  --color-f-dark-palette-grape-border-active: #881798;
+  --color-f-dark-palette-lilac-background2: #e6bfed;
+  --color-f-dark-palette-lilac-foreground2: #63276d;
+  --color-f-dark-palette-lilac-border-active: #b146c2;
+  --color-f-dark-palette-pink-background2: #f7c0e3;
+  --color-f-dark-palette-pink-foreground2: #80215d;
+  --color-f-dark-palette-pink-border-active: #e43ba6;
+  --color-f-dark-palette-magenta-background2: #eca5d1;
+  --color-f-dark-palette-magenta-foreground2: #6b0043;
+  --color-f-dark-palette-magenta-border-active: #bf0077;
+  --color-f-dark-palette-plum-background2: #d696c0;
+  --color-f-dark-palette-plum-foreground2: #43002b;
+  --color-f-dark-palette-plum-border-active: #77004d;
+  --color-f-dark-palette-beige-background2: #d7d4d4;
+  --color-f-dark-palette-beige-foreground2: #444241;
+  --color-f-dark-palette-beige-border-active: #7a7574;
+  --color-f-dark-palette-mink-background2: #cecccb;
+  --color-f-dark-palette-mink-foreground2: #343231;
+  --color-f-dark-palette-mink-border-active: #5d5a58;
+  --color-f-dark-palette-platinum-background2: #cdd6d8;
+  --color-f-dark-palette-platinum-foreground2: #3b4447;
+  --color-f-dark-palette-platinum-border-active: #69797e;
+  --color-f-dark-palette-anchor-background2: #bcc3c7;
+  --color-f-dark-palette-anchor-foreground2: #202427;
+  --color-f-dark-palette-anchor-border-active: #394146;
+  --color-f-dark-status-success-background1: #f1faf1;
+  --color-f-dark-status-success-background2: #9fd89f;
+  --color-f-dark-status-success-background3: #107c10;
+  --color-f-dark-status-success-foreground1: #0e700e;
+  --color-f-dark-status-success-foreground2: #094509;
+  --color-f-dark-status-success-foreground3: #107c10;
+  --color-f-dark-status-success-foreground-inverted: #54b054;
+  --color-f-dark-status-success-border-active: #107c10;
+  --color-f-dark-status-success-border1: #9fd89f;
+  --color-f-dark-status-success-border2: #107c10;
+  --color-f-dark-status-warning-background1: #fff9f5;
+  --color-f-dark-status-warning-background2: #fdcfb4;
+  --color-f-dark-status-warning-background3: #f7630c;
+  --color-f-dark-status-warning-foreground1: #bc4b09;
+  --color-f-dark-status-warning-foreground2: #8a3707;
+  --color-f-dark-status-warning-foreground3: #bc4b09;
+  --color-f-dark-status-warning-foreground-inverted: #faa06b;
+  --color-f-dark-status-warning-border-active: #f7630c;
+  --color-f-dark-status-warning-border1: #fdcfb4;
+  --color-f-dark-status-warning-border2: #bc4b09;
+  --color-f-dark-status-danger-background1: #fdf3f4;
+  --color-f-dark-status-danger-background2: #eeacb2;
+  --color-f-dark-status-danger-background3: #c50f1f;
+  --color-f-dark-status-danger-foreground1: #b10e1c;
+  --color-f-dark-status-danger-foreground2: #6e0811;
+  --color-f-dark-status-danger-foreground3: #c50f1f;
+  --color-f-dark-status-danger-foreground-inverted: #dc626d;
+  --color-f-dark-status-danger-border-active: #c50f1f;
+  --color-f-dark-status-danger-border1: #eeacb2;
+  --color-f-dark-status-danger-border2: #c50f1f;
+  --color-f-dark-status-danger-background3-hover: #b10e1c;
+  --color-f-dark-status-danger-background3-pressed: #960b18;
+  --color-f-light-neutral-shadow-ambient: rgba(0, 0, 0, 0.24);
+  --color-f-light-neutral-shadow-key: rgba(0, 0, 0, 0.28);
+  --color-f-light-neutral-shadow-ambient-lighter: rgba(0, 0, 0, 0.12);
+  --color-f-light-neutral-shadow-key-lighter: rgba(0, 0, 0, 0.14);
+  --color-f-light-neutral-shadow-ambient-darker: rgba(0, 0, 0, 0.4);
+  --color-f-light-neutral-shadow-key-darker: rgba(0, 0, 0, 0.48);
+  --color-f-light-brand-shadow-ambient: rgba(0, 0, 0, 0.3);
+  --color-f-light-brand-shadow-key: rgba(0, 0, 0, 0.25);
+  --color-f-dark-neutral-shadow-ambient: rgba(0, 0, 0, 0.12);
+  --color-f-dark-neutral-shadow-key: rgba(0, 0, 0, 0.14);
+  --color-f-dark-neutral-shadow-ambient-lighter: rgba(0, 0, 0, 0.06);
+  --color-f-dark-neutral-shadow-key-lighter: rgba(0, 0, 0, 0.07);
+  --color-f-dark-neutral-shadow-ambient-darker: rgba(0, 0, 0, 0.2);
+  --color-f-dark-neutral-shadow-key-darker: rgba(0, 0, 0, 0.24);
+  --color-f-dark-brand-shadow-ambient: rgba(0, 0, 0, 0.3);
+  --color-f-dark-brand-shadow-key: rgba(0, 0, 0, 0.25);
+
+  --font-f-base: 'Segoe UI', 'Segoe UI Web (West European)', -apple-system,
+    BlinkMacSystemFont, Roboto, 'Helvetica Neue', sans-serif;
+  --font-f-monospace: Consolas, 'Courier New', Courier, monospace;
+  --font-f-numeric: Bahnschrift, 'Segoe UI', 'Segoe UI Web (West European)',
+    -apple-system, BlinkMacSystemFont, Roboto, 'Helvetica Neue', sans-serif;
+
+  --font-weight-f-regular: 400;
+  --font-weight-f-medium: 500;
+  --font-weight-f-semibold: 600;
+  --font-weight-f-bold: 700;
+
+  --stroke-width-f-thin: 1px;
+  --stroke-width-f-thick: 2px;
+  --stroke-width-f-thicker: 3px;
+  --stroke-width-f-thickest: 4px;
+
+  --animate-index-cw-tip: 3-5-1-y16 7.2s linear infinite;
+
+  @keyframes 3-5-1-y16 {
+    0%,
+    28% {
+      transform: translateY(0);
+    }
+    33%,
+    61% {
+      transform: translateY(-2rem);
+    }
+    67%,
+    94% {
+      transform: translateY(-4rem);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+}
+
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+}
+
+@utility loader {
+  @apply h-8 w-8 rounded-full border-4 border-gray-300 before:relative before:-left-1 before:-top-1 before:block before:h-8 before:w-8 before:animate-spin before:rounded-full before:border-4 before:border-gray-300 before:border-r-gray-500 before:content-[''] dark:border-gray-700;
+}
+
+@utility select-item {
+  @apply after:mx-auto after:block after:h-1 after:w-4 after:rounded-full after:bg-white after:align-middle after:transition-all after:duration-100 after:ease-linear after:content-[''] hover:after:w-full hover:after:bg-cyan-200 aria-selected:after:bg-cyan-400 dark:after:bg-black dark:hover:after:bg-cyan-800 dark:aria-selected:after:bg-cyan-600;
+}
+
+@utility markdown {
+  h1 {
+    @apply mb-2 mt-6 text-3xl;
+  }
+
+  h2 {
+    @apply mb-2 mt-4 text-2xl;
+  }
+
+  h3 {
+    @apply mb-2 mt-4 text-xl;
+  }
+
+  h4 {
+    @apply mb-1 mt-3 text-lg font-bold;
+  }
+
+  h5 {
+    @apply mb-1 mt-2 font-extrabold;
+  }
+
+  h6 {
+    @apply my-1 font-bold;
+  }
+
+  code {
+    @apply mx-1 inline-block rounded-md bg-gray-200 py-1 dark:bg-gray-800;
+  }
+
+  blockquote {
+    @apply border-l-4 border-l-cyan-400 py-2 pl-4 dark:border-l-cyan-600;
+  }
+
+  ul {
+    list-style: inside;
+  }
+}
+
+@layer utilities {
+  :root {
+    color-scheme: dark light;
+  }
 }
 
 @layer base {
@@ -18,56 +954,6 @@
   @media (prefers-color-scheme: dark) {
     body {
       @apply bg-black text-white;
-    }
-  }
-}
-
-@layer components {
-  .loader {
-    @apply h-8 w-8 rounded-full border-4 border-gray-300 before:relative before:-left-1 before:-top-1 before:block before:h-8 before:w-8 before:animate-spin before:rounded-full before:border-4 before:border-gray-300 before:border-r-gray-500 before:content-[''] dark:border-gray-700;
-  }
-
-  .select-item {
-    @apply after:mx-auto after:block after:h-1 after:w-4 after:rounded-full after:bg-white after:align-middle after:transition-all after:duration-100 after:ease-linear after:content-[''] hover:after:w-full hover:after:bg-cyan-200 after:aria-selected:bg-cyan-400 after:dark:bg-black dark:hover:after:bg-cyan-800 after:aria-selected:dark:bg-cyan-600;
-  }
-}
-
-@layer components {
-  .markdown {
-    h1 {
-      @apply mb-2 mt-6 text-3xl;
-    }
-
-    h2 {
-      @apply mb-2 mt-4 text-2xl;
-    }
-
-    h3 {
-      @apply mb-2 mt-4 text-xl;
-    }
-
-    h4 {
-      @apply mb-1 mt-3 text-lg font-bold;
-    }
-
-    h5 {
-      @apply mb-1 mt-2 font-extrabold;
-    }
-
-    h6 {
-      @apply my-1 font-bold;
-    }
-
-    code {
-      @apply mx-1 inline-block rounded-md bg-gray-200 py-1 dark:bg-gray-800;
-    }
-
-    blockquote {
-      @apply border-l-4 border-l-cyan-400 py-2 pl-4 dark:border-l-cyan-600;
-    }
-
-    ul {
-      list-style: inside;
     }
   }
 }

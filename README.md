@@ -6,11 +6,9 @@
 
 - [ ] fluent design ui
 - [ ] 首页
-- [ ] 完成使用 qwik 的链接
 - [ ] 想办法在 qwik 中在一个文件夹下展示markdown 文件
-- [ ] 升级 eslint
-- [ ] 升级 tailwind
 - [ ] 准备升级 qwik
+- [ ] 升级 eslint
 
 ## 梗图贡献流程
 

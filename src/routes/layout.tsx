@@ -79,11 +79,11 @@ export default component$(() => {
         checked={showAside.value}
       />
       <div
-        class="static left-0 top-0 z-40 hidden h-dvh w-dvw aria-expanded:fixed aria-expanded:block md:aria-expanded:hidden"
+        class="static top-0 left-0 z-40 hidden h-dvh w-dvw aria-expanded:fixed aria-expanded:block md:aria-expanded:hidden"
         aria-expanded={showAside.value}
         onClick$={() => (showAside.value = !showAside.value)}
       ></div>
-      <aside class="fixed -left-80 z-50 flex h-dvh w-80 flex-col gap-1 border-r-2 border-gray-400 bg-gray-100 px-2 transition-[left] ease-in-out peer-checked/aside:left-0 dark:border-gray-600 dark:bg-gray-900">
+      <aside class="bg-f-light-neutral-background3 dark:bg-f-dark-neutral-background3 fixed -left-80 z-50 flex h-dvh w-80 flex-col gap-1 px-2 transition-[left] ease-in-out peer-checked/aside:left-0">
         <section class="mb-8 flex h-12 items-center gap-8 px-2">
           <button
             aria-selected={showAside.value}
@@ -100,7 +100,7 @@ export default component$(() => {
       </aside>
       <div class="ml-0 transition-[margin] ease-in-out md:peer-checked/aside:ml-80">
         <header
-          class="sticky top-0 h-12 min-h-0 overflow-hidden bg-white transition-[height] ease-out md:block md:aria-disabled:h-0 dark:bg-black"
+          class="bg-f-light-neutral-background2 dark:bg-f-dark-neutral-background2 sticky top-0 h-12 min-h-0 overflow-hidden transition-[height] ease-out md:block md:aria-disabled:h-0"
           aria-disabled={showAside.value}
         >
           <div class="flex h-12 items-center gap-8 px-4">

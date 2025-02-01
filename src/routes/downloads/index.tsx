@@ -23,7 +23,7 @@ interface ReleaseItem {
 
 const formatDom = (i: string) => DOMPurify.sanitize(marked.parse(i) as string);
 const ReleaseBlock = component$<{ it: ReleaseItem }>(({ it }) => (
-  <section class="flex flex-col gap-4 rounded-lg border-2 border-gray-500 bg-gray-50 p-4 dark:bg-gray-950">
+  <section class="bg-f-light-neutral-background1 dark:bg-f-dark-neutral-background1 flex flex-col gap-4 rounded-lg p-4">
     <h1 class="text-3xl">{it.name}</h1>
     <div class="flex flex-wrap items-center gap-4 align-middle text-gray-500">
       <a
@@ -200,25 +200,25 @@ export default component$(() => {
   return (
     <>
       <header
-        class="sticky top-12 flex w-full border-b-2 bg-white px-2 transition-[top] ease-in-out md:top-0 md:aria-expanded:top-12 dark:bg-black"
+        class="bg-f-light-neutral-background1 dark:bg-f-dark-neutral-background2 sticky top-12 flex w-full px-2 transition-[top] ease-in-out md:top-0 md:aria-expanded:top-12"
         aria-expanded={!showedAside.value}
       >
         <button
-          class="select-item px-2 pb-1 pt-2"
+          class="select-item px-2 pt-2 pb-1"
           aria-selected={selected.value == 0}
           onClick$={() => (selected.value = 0)}
         >
           稳定版
         </button>
         <button
-          class="select-item px-2 pb-1 pt-2"
+          class="select-item px-2 pt-2 pb-1"
           aria-selected={selected.value == 1}
           onClick$={() => (selected.value = 1)}
         >
           测试版
         </button>
         <button
-          class="select-item px-2 pb-1 pt-2"
+          class="select-item px-2 pt-2 pb-1"
           aria-selected={selected.value == 2}
           onClick$={() => (selected.value = 2)}
         >

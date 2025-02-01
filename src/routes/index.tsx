@@ -3,9 +3,9 @@ import { Link, type DocumentHead } from "@builder.io/qwik-city";
 
 export default component$(() => {
   return (
-    <main>
-      <section class="flex min-h-[60dvh] flex-col gap-4 rounded-xl px-8">
-        <div class="mt-80">
+    <main class="flex min-h-[90dvh] pb-8">
+      <section class="flex flex-col gap-4 self-end rounded-xl px-8">
+        <div class="self">
           <p class="pb-2 text-xl font-semibold text-gray-300">使用</p>
           <h1 class="text-6xl lg:text-8xl">Class Widgets</h1>
           <div class="flex gap-2 pt-4 text-2xl">

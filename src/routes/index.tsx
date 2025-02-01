@@ -66,7 +66,8 @@ export const head: DocumentHead = {
   meta: [
     {
       name: "unofficol class widgets",
-      content: "class widgets's download link & plugings' link & class widgets meme",
+      content:
+        "class widgets's download link & plugings' link & class widgets meme",
     },
   ],
 };

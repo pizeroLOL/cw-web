@@ -78,7 +78,7 @@ export default [
       sourceType: "module",
 
       parserOptions: {
-        tsconfigRootDir: "/home/pizero/Code/playground/cw-set/cw-web",
+        tsconfigRootDir: "./",
         project: ["./tsconfig.json"],
 
         ecmaFeatures: {

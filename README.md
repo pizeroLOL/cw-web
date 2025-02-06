@@ -2,6 +2,9 @@
 
 闲得没事搓个 qwik 网页玩玩。
 
+> [!WARNING]
+> 因个人原因会有更新不及时的情况，看个乐就行
+
 ## Todo
 
 - [ ] fluent design ui

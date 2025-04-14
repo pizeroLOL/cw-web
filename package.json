@@ -34,7 +34,7 @@
     "@eslint/js": "^9.19.0",
     "@tailwindcss/postcss": "^4.0.0",
     "@types/eslint": "^9.6.1",
-    "@types/node": "22.10.10",
+    "@types/node": "22.14.1",
     "@typescript-eslint/eslint-plugin": "^8.21.0",
     "@typescript-eslint/parser": "^8.21.0",
     "eslint-plugin-qwik": "^1.12.0",

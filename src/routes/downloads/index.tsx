@@ -4,7 +4,7 @@ import {
   type JSXOutput,
   useContext,
   useSignal,
-} from "@builder.io/qwik";
+} from "@qwik.dev/core";
 import DOMPurify from "dompurify";
 import { marked } from "marked";
 import ClientLoader from "~/components/ClientLoader";

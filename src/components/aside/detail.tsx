@@ -1,4 +1,4 @@
-import { component$ } from "@builder.io/qwik";
+import { component$ } from "@qwik.dev/core";
 import type { AsideAProps } from "./a";
 import AsideA from "./a";
 import menuSrc from "@fluentui/svg-icons/icons/chevron_down_16_filled.svg";

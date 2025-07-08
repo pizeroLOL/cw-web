@@ -3,7 +3,7 @@ import {
   component$,
   // Resource,
   useSignal,
-} from "@builder.io/qwik";
+} from "@qwik.dev/core";
 import ClientLoader from "~/components/ClientLoader";
 
 interface PluginItem {

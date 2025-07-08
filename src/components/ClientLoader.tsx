@@ -5,8 +5,8 @@ import {
   type JSX,
   type QRL,
   useVisibleTask$,
-} from "@builder.io/qwik";
-import { isBrowser } from "@builder.io/qwik/build";
+} from "@qwik.dev/core";
+import { isBrowser } from "@qwik.dev/core/build";
 
 // 定义组件的 Props 类型
 interface ClientJsonLoaderProps<T> {

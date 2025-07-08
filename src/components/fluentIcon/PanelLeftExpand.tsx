@@ -1,4 +1,4 @@
-import { component$ } from "@builder.io/qwik";
+import { component$ } from "@qwik.dev/core";
 import type { IconProps } from "./iconProps";
 
 export default component$<IconProps>(({ width, height }) => (

@@ -4,8 +4,8 @@ import {
   Slot,
   useContextProvider,
   useSignal,
-} from "@builder.io/qwik";
-import { Link, type RequestHandler } from "@builder.io/qwik-city";
+} from "@qwik.dev/core";
+import { Link, type RequestHandler } from "@qwik.dev/router";
 import { asideRender, type AsideDetailProps } from "~/components/aside/detail";
 import type { AsideAProps } from "~/components/aside/a";
 import ALogo from "~/components/aLogo";
